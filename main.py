@@ -1,11 +1,13 @@
 from modules.voice_input import listen_to_user
 from modules.voice_output import speak
-from actions.time_actions import tell_time, tell_date
+from actions.time_actions import tell_time, tell_date, greet_user
 
 
 def main():
     name = input("Please enter your name: ")
-    speak(f"Hello {name}, how can I assist you today?")
+    greeting = greet_user()
+    speak(f"{greeting} {name}! How can I assist you today?")
+
 
     while True:
         user_input = listen_to_user()
